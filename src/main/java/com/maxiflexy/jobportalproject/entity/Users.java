@@ -19,7 +19,7 @@ import java.util.Date;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
     @Column(unique = true)
@@ -35,7 +35,7 @@ public class Users {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userTypeId", referencedColumnName = "userTypeId")
-    private UsersType usersTypeId;
+    private UsersType userTypeId;
 
 
 }

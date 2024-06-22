@@ -2,7 +2,6 @@ package com.maxiflexy.jobportalproject.util;
 
 import com.maxiflexy.jobportalproject.entity.Users;
 import com.maxiflexy.jobportalproject.entity.UsersType;
-import org.hibernate.usertype.UserType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

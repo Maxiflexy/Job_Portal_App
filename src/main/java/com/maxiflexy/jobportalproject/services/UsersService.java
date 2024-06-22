@@ -5,4 +5,6 @@ import com.maxiflexy.jobportalproject.entity.Users;
 public interface UsersService {
 
     Users addNewUser(Users users);
+
+    Object getCurrentUserProfile();
 }

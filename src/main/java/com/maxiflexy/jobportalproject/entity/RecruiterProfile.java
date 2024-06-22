@@ -1,11 +1,9 @@
 package com.maxiflexy.jobportalproject.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Data
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,6 +17,7 @@ public class RecruiterProfile {
 
     @OneToOne
     @JoinColumn(name = "user_account_id")
+    @MapsId
     private Users userId;
 
     private String firstName;

@@ -3,7 +3,6 @@ package com.maxiflexy.jobportalproject.services.impl;
 import com.maxiflexy.jobportalproject.entity.UsersType;
 import com.maxiflexy.jobportalproject.repository.UsersTypeRepository;
 import com.maxiflexy.jobportalproject.services.UsersTypeService;
-import org.hibernate.usertype.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

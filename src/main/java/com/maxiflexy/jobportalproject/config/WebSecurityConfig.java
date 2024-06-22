@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,10 +17,13 @@ public class WebSecurityConfig {
 
 
     private final CustomerUserDetailsService customerUserDetailsService;
+    private final CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
     @Autowired
-    public WebSecurityConfig(CustomerUserDetailsService customerUserDetailsService) {
+    public WebSecurityConfig(CustomerUserDetailsService customerUserDetailsService,
+                             CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler) {
         this.customerUserDetailsService = customerUserDetailsService;
+        this.customAuthenticationSuccessHandler = customAuthenticationSuccessHandler;
     }
 
     private final String[] publicUrl = {
@@ -51,6 +55,15 @@ public class WebSecurityConfig {
             auth.requestMatchers(publicUrl).permitAll();
             auth.anyRequest().authenticated();
         });
+
+        // custom authentication  success handler and config for logout
+        httpSecurity.formLogin(form -> form.loginPage("/login").permitAll().successHandler(customAuthenticationSuccessHandler))
+                .logout(logout -> {
+                    logout.logoutUrl("/logout");
+                    logout.logoutSuccessUrl("/");
+                }).cors(Customizer.withDefaults())
+                .csrf(csrf -> csrf.disable());
+
         return httpSecurity.build();
     }
 

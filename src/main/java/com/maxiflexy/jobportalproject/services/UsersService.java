@@ -7,4 +7,6 @@ public interface UsersService {
     Users addNewUser(Users users);
 
     Object getCurrentUserProfile();
+
+    Users getCurrentUser();
 }

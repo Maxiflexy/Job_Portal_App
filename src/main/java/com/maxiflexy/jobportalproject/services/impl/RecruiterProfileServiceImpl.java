@@ -21,4 +21,9 @@ public class RecruiterProfileServiceImpl implements RecruiterProfileService {
     public Optional<RecruiterProfile> getOne(Integer id){
         return recruiterProfileRepository.findById(id);
     }
+
+    @Override
+    public RecruiterProfile addNew(RecruiterProfile recruiterProfile) {
+        return recruiterProfileRepository.save(recruiterProfile);
+    }
 }

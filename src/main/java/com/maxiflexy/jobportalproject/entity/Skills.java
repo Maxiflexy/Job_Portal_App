@@ -3,7 +3,7 @@ package com.maxiflexy.jobportalproject.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
+
 @Getter
 @Setter
 @NoArgsConstructor

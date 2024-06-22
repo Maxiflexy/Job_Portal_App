@@ -3,7 +3,7 @@ package com.maxiflexy.jobportalproject.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -38,4 +38,12 @@ public class RecruiterProfile {
     public RecruiterProfile(Users users){
         this.userId = users;
     }
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (profilePhoto == null) return null;
+        return "/photos/recruiter/" + userAccountId + "/" + profilePhoto;
+    }
+
+
 }

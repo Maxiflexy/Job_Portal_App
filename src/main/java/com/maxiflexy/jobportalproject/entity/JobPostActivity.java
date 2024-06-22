@@ -16,7 +16,6 @@ import java.util.Date;
 @Setter
 @Getter
 @Entity
-@Table(name = "")
 public class JobPostActivity {
 
     @Id

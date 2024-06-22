@@ -20,7 +20,7 @@
 <body>
 <header class="navbar navbar-expand-lg navbar-dark">
     <label class="mt-2 ms-5 font-weight-bold h5"
-    ><a th:href="@{/dashboard/}">maxi-devjobs</a
+    ><a th:href="@{/dashboard/}">hotdevjobs</a
     ><span class="logo_com font-weight-bold h5" style="color: white">
           .com</span
     ></label
@@ -78,7 +78,6 @@
                 th:if="${user.photosImagePath!=null}"
                 th:src="@{'/' + ${user.photosImagePath}}" alt="img"
         />
-
 
         <label th:if="${user.firstName != null && user.lastName != null}"
                th:text="${user.firstName+' '+user.lastName}"

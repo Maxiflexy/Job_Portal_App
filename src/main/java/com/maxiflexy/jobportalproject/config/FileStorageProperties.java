@@ -12,4 +12,6 @@ public class FileStorageProperties {
 
     private String uploadDir;
 
+    private String candidateUploadDir;
+
 }

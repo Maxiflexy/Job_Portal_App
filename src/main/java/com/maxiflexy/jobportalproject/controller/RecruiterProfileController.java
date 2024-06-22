@@ -80,7 +80,7 @@ public class RecruiterProfileController {
 
         String subDir = String.valueOf(savedUser.getUserAccountId());
 
-        String uploadDir = "photos/recruiter/" + savedUser.getUserAccountId();
+        //String uploadDir = "photos/recruiter/" + savedUser.getUserAccountId();
 
         try{
             /*

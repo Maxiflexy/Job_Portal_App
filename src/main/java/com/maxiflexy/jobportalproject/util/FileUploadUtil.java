@@ -16,15 +16,38 @@ import java.nio.file.StandardCopyOption;
 public class FileUploadUtil {
 
     private final String uploadDir;
+    private final String candidateUploadDir;
 
     @Autowired
     public FileUploadUtil(FileStorageProperties fileStorageProperties) {
         this.uploadDir = fileStorageProperties.getUploadDir();
+        this.candidateUploadDir = fileStorageProperties.getCandidateUploadDir();
     }
 
     public void saveFile(String subDir, String fileName, MultipartFile multipartFile) throws IOException {
 
         Path uploadPath = Paths.get(uploadDir, subDir);
+        if(!Files.exists(uploadPath)){
+            Files.createDirectories(uploadPath);
+        }
+
+        try(InputStream inputStream = multipartFile.getInputStream()){
+
+            Path path = uploadPath.resolve(fileName);
+            System.out.println("FilePath " + path);
+            System.out.println("FileName " + fileName);
+            System.out.println("FilePath: " + path.toAbsolutePath());
+            Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING);
+
+        }catch (IOException exception){
+            throw new RuntimeException("Could not save image file: " + fileName, exception);
+        }
+    }
+
+    public void saveFileSeeker(String subDir, String fileName, MultipartFile multipartFile) throws IOException {
+
+        Path uploadPath = Paths.get(candidateUploadDir, subDir);
+
         if(!Files.exists(uploadPath)){
             Files.createDirectories(uploadPath);
         }

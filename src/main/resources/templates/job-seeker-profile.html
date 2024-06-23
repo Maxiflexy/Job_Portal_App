@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="https://www.thymeleaf.org/"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <link
             th:rel="stylesheet"
@@ -40,8 +42,9 @@
                     th:action="@{/job-seeker-profile/addNew}"
                     th:object="${profile}"
                     method="post"
-                    enctype="multipart/form-data"
-            >
+                    enctype="multipart/form-data">
+
+
                 <div class="row" style="margin-right:0; margin-left:0;">
                     <div class="col-md-12">
                         <div class="d-flex justify-content-center pt-3">

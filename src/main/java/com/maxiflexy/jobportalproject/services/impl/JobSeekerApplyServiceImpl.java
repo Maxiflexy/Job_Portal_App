@@ -28,5 +28,10 @@ public class JobSeekerApplyServiceImpl implements JobSeekerApplyService {
         return jobSeekerApplyRepository.findByJob(job);
     }
 
+    @Override
+    public void addNew(JobSeekerApply jobSeekerApply) {
+        jobSeekerApplyRepository.save(jobSeekerApply);
+    }
+
 
 }

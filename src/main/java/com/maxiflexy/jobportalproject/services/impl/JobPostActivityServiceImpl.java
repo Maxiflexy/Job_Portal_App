@@ -63,7 +63,6 @@ public class JobPostActivityServiceImpl implements JobPostActivityService {
     }
 
 
-
     @Override
     public List<JobPostActivity> getAll() {
        return jobPostActivityRepository.findAll();

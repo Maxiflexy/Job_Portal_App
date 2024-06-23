@@ -9,4 +9,6 @@ public interface RecruiterProfileService {
     Optional<RecruiterProfile> getOne(Integer id);
 
     RecruiterProfile addNew(RecruiterProfile recruiterProfile);
+
+    RecruiterProfile getCurrentRecruiterProfile();
 }

@@ -35,6 +35,9 @@ public class JobPostActivity {
     private JobCompany jobCompanyId;
 
     @Transient
+    private Boolean isActive;
+
+    @Transient
     private Boolean isSaved;
 
     @Length(max = 10000)

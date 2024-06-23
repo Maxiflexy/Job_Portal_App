@@ -11,4 +11,6 @@ public interface JobSeekerApplyService {
     List<JobSeekerApply> getCandidatesJobs(JobSeekerProfile userAccountId);
 
     List<JobSeekerApply> getJobCandidates(JobPostActivity job);
+
+    void addNew(JobSeekerApply jobSeekerApply);
 }

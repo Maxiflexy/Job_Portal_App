@@ -24,7 +24,7 @@ This application allows job seekers to find and apply for jobs, and recruiters t
 
 ## Database Structure
 
-![Game Screenshot](db-images/jobportal-database-schema.png)
+![Database Screenshot](db-images/db-pic.png)
 
 
 ## Features

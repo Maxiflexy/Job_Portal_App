@@ -55,4 +55,5 @@ public class JobSeekerProfile {
     public JobSeekerProfile(Users users) {
         this.userId = users;
     }
+
 }
